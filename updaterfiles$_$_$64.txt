@@ -1,0 +1,8 @@
+chunkCopy.exe,yes,overwrite
+chunkCopy.ini
+license.txt,no
+
+
+
+
+
