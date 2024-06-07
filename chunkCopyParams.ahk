@@ -11,6 +11,10 @@ handleParams(){
   
   if (hasParams != 0){
     Loop hasParams {
+      if(A_Args[A_index] = "remove"){
+        exitApp
+      }
+      
       ffpFound := RegExMatch(A_Args[A_index],"i).*?ffp.*?(\d+)", &match)
       if(ffpFound){
         ffp := match[1]
