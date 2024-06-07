@@ -7,7 +7,7 @@ handleParams(){
   local ffp
   
   match := ""
-  
+  hasParams := A_Args.Length
   if (hasParams != 0){
     Loop hasParams {
     ; "remove" was checked already 
@@ -79,6 +79,9 @@ handleParams(){
       
       if(A_Args[A_index] = "sleep"){
         finishedActionMode := 4
+      }
+      if(A_Args[A_index] = "remove"){
+        exitApp
       }
     }
   }

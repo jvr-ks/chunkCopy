@@ -41,15 +41,6 @@ KeyHistory 50
 
 SetWorkingDir A_ScriptDir
 
-hasParams := A_Args.Length
-if (hasParams != 0){
-  Loop hasParams {
-    if(A_Args[A_index] = "remove"){
-      exitApp
-    }
-  }
-}
-
 appname := "ChunkCopy"
 appnameLower := "chunkCopy"
 appVersion := "0.021"
