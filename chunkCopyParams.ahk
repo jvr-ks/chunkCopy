@@ -6,15 +6,11 @@ handleParams(){
   global
   local ffp
   
-  hasParams := A_Args.Length
   match := ""
   
   if (hasParams != 0){
     Loop hasParams {
-      if(A_Args[A_index] = "remove"){
-        exitApp
-      }
-      
+    ; "remove" was checked already 
       ffpFound := RegExMatch(A_Args[A_index],"i).*?ffp.*?(\d+)", &match)
       if(ffpFound){
         ffp := match[1]
