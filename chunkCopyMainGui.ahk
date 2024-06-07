@@ -51,7 +51,7 @@ createMainGui(fg := "c000000", bg := "FFFFFF"){
  
   width := 600
   xStart := 12
-  mainGui := Gui("+AlwaysOnTop +caption +maximizebox +resize", appName " " appVersion " [" lang("language") "]" )
+  mainGui := Gui("+AlwaysOnTop +caption +maximizebox -resize", appName " " appVersion " [" lang("language") "]" )
   mainGui.SetFont("s" fontsize, fontname)
   
   mainGui.MenuBar := mainGuiMenu
@@ -127,9 +127,7 @@ createMainGui(fg := "c000000", bg := "FFFFFF"){
 mainGui_Size(*){
   global
   
-  AutoXYWH2("w", mainGuiPg1)
-  AutoXYWH2("* wh", mainGuiText1)
-  
+  ; Currently, the window is fixed ...
 }
 ;------------------------------- mainGui_Close -------------------------------
 mainGui_Close(*){

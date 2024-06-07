@@ -45,7 +45,7 @@ underConstruction := 1
 
 appname := "ChunkCopy"
 appnameLower := "chunkCopy"
-appVersion := "0.020"
+appVersion := "0.021"
 operationRunning := 0
 currentFile := ""
 showProgress := 0

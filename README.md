@@ -147,7 +147,8 @@ Hints:
 - Parameter are not case sensitiv, 
 - Without a "testmode / testmodeoff" parameter,  
 the state of the "testmode" is defined by the Configuration file setting,  
-- Without a "shutdown/sleep/hibernate" chunkcopy is closed only after the operation.
+- Without a "shutdown/sleep/hibernate" chunkcopy is closed only after the operation.  
+- The window is fixed to the top/center!  
   
 #### <a name="multilanguage">chunkCopy multilanguage </a><a href="#overview"> &uarr;</a> 
 Not the gui, Robocopy output to logfile only:  
@@ -211,5 +212,5 @@ Virustotal virusscan results, please use [CTRL] + Click to open in a new window!
 
 
 ##### Virusscan at Virustotal 
-[Virusscan at Virustotal, chunkCopy.exe 64bit-exe, Check here](https://www.virustotal.com/gui/url/2905ae18866b7f67d6c765ed575cc21d38817982f49a1f69212b12dbaef31a1e/detection/u-2905ae18866b7f67d6c765ed575cc21d38817982f49a1f69212b12dbaef31a1e-1717664624
+[Virusscan at Virustotal, chunkCopy.exe 64bit-exe, Check here](https://www.virustotal.com/gui/url/2905ae18866b7f67d6c765ed575cc21d38817982f49a1f69212b12dbaef31a1e/detection/u-2905ae18866b7f67d6c765ed575cc21d38817982f49a1f69212b12dbaef31a1e-1717780676
 )  
