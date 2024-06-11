@@ -24,7 +24,7 @@ A copy is included of the file "license.txt" is included in each download.
   
 Version (&gt;=)| Change  
 ------------ | -------------  
-0.018 | uploadDelay rename to intermediateDelay (USB stick cool down time)  
+0.022 | uploadDelay rename to intermediateDelay (E.g. USB stick cool down time)  
 0.017 | Move to a project of its own! [chunkCopy](https://github.com/jvr-ks/chunkCopy). 
   
 #### <a name="chunkCopydescription">chunkCopy description</a><a href="#overview"> &uarr;</a>  
