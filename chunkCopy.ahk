@@ -43,7 +43,7 @@ SetWorkingDir A_ScriptDir
 
 appname := "ChunkCopy"
 appnameLower := "chunkCopy"
-appVersion := "0.021"
+appVersion := "0.022"
 operationRunning := 0
 currentFile := ""
 showProgress := 0
@@ -99,9 +99,11 @@ msg2 := "Please select a menu entry!"
 
 if (testmode){
   settingsMenu.Check("Testmode")
+  testMenu.Check("Testmode")
   msg2 .= " (`"testmode`" is activated)"
 } else {
   settingsMenu.UnCheck("Testmode")
+  testMenu.UnCheck("Testmode")
 }
 
 mainGuiText1Append(msg2)

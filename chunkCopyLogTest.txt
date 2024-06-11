@@ -160,3 +160,25 @@ Geschwindigkeit: 94998.550 Megabytes/Min
 Beendet: Donnerstag, 6. Juni 2024 11:02:25
 
 
+
+Gestarted: Dienstag, 11. Juni 2024 11:26:06
+robocopy ".\testmodeFrom" ".\testmodeTo" File testfile9.txt /E /ETA /NJH /R:0 /W:0 /LOG:_robo.txt
+Bytes: 512.99 Megabytes
+Geschwindigkeit: 59534.875 Megabytes/Min
+Beendet: Dienstag, 11. Juni 2024 11:26:07
+
+
+Gestarted: Dienstag, 11. Juni 2024 11:26:13
+robocopy ".\testmodeFrom" ".\testmodeTo" File testfile4.txt /E /ETA /NJH /R:0 /W:0 /LOG:_robo.txt
+Bytes: 512.99 Megabytes
+Geschwindigkeit: 112745.532 Megabytes/Min
+Beendet: Dienstag, 11. Juni 2024 11:26:14
+
+
+Gestarted: Dienstag, 11. Juni 2024 11:26:20
+robocopy ".\testmodeFrom" ".\testmodeTo" File testfile5.txt /E /ETA /NJH /R:0 /W:0 /LOG:_robo.txt
+Bytes: 512.99 Megabytes
+Geschwindigkeit: 126145.616 Megabytes/Min
+Beendet: Dienstag, 11. Juni 2024 11:26:20
+
+

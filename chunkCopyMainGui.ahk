@@ -6,6 +6,9 @@ createMainGui(fg := "c000000", bg := "FFFFFF"){
   global
   
   testMenu := Menu()
+  testMenu.Add("Testmode", toggleTestmode)
+  testMenu.Add("Open .\To directory (testmode)", openDir.Bind("To (testmode)"))
+  testMenu.Add("Open .\From directory (testmode)", openDir.Bind("From (testmode)"))
   testMenu.Add("Create testfile", actionDo.Bind("Create testfile"))
   testMenu.Add("Create 5 testfiles", actionDo.Bind("Create 5 testfiles"))
   testMenu.Add("Create 10 testfiles", actionDo.Bind("Create 10 testfiles"))
@@ -15,8 +18,7 @@ createMainGui(fg := "c000000", bg := "FFFFFF"){
   testMenu.Add("Delete testfiles in the `"To`" folder", actionDo.Bind("Delete testfiles in the `"To`" folder"))
   testMenu.Add("Delete all testfiles (From and To)", actionDo.Bind("Delete all testfiles (From and To)"))
   testMenu.Add("")
-  testMenu.Add("Open .\To directory (testmode)", openDir.Bind("To (testmode)"))
-  testMenu.Add("Open .\From directory (testmode)", openDir.Bind("From (testmode)"))
+  
   
   openDirMenu := Menu()
   openDirMenu.Add("To", openDir.Bind("To"))
@@ -34,7 +36,6 @@ createMainGui(fg := "c000000", bg := "FFFFFF"){
   actionMenu.Add("Compare", actionDo.Bind("Compare"))
   actionMenu.Add("Start update (ext) [app is closed]", startUpdate)
   actionMenu.Add("Open Github webpage (Browser)", openGithub)
-  actionMenu.Add("Test", testMenu)
   
   settingsMenu := Menu()
   settingsMenu.Add("Settings", openSettingsMenu)
@@ -46,6 +47,7 @@ createMainGui(fg := "c000000", bg := "FFFFFF"){
   mainGuiMenu.Add("Settings", settingsMenu)
   mainGuiMenu.Add("Commands", actionMenu)
   mainGuiMenu.Add("Open Directories", openDirMenu)
+  mainGuiMenu.Add("Test", testMenu)
   mainGuiMenu.Add("🗙", closeMainGui)
   
  

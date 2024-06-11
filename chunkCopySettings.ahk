@@ -49,8 +49,8 @@ chunkCopySettings(*){
   guiSettings.add("Text", "x5" , "fontsize: ")
   fontsize_Edit := guiSettings.add("Edit", "xs yp+0 r1 w500", fontsize)
   
-  guiSettings.add("Text", "x5" , "uploadDelay (millisec.): ")
-  uploadDelay_Edit := guiSettings.add("Edit", "xs yp+0 r1 w500", uploadDelay)
+  guiSettings.add("Text", "x5" , "intermediateDelay (millisec.): ")
+  intermediateDelay_Edit := guiSettings.add("Edit", "xs yp+0 r1 w500", intermediateDelay)
   
   guiSettings.Show("center autosize")
   
@@ -67,7 +67,7 @@ saveConfig(*){
   from := from_Edit.Value
   to := to_Edit.Value
   filesPerPass := filesPerPass_Edit.Value
-  uploadDelay := uploadDelay_Edit.Value
+  intermediateDelay := intermediateDelay_Edit.Value
   testmodeFrom := testmodeFrom_Edit.Value
   testmodeTo := testmodeTo_Edit.Value
   fontname := fontname_Edit.Value
@@ -90,7 +90,7 @@ saveConfigTo(cfgFile){
   IniWrite testmodeTo, cfgFile, "config", "testmodeTo"
   IniWrite fontname, cfgFile, "config", "fontname"
   IniWrite fontsize, cfgFile, "config", "fontsize"
-  IniWrite uploadDelay, cfgFile, "config", "uploadDelay"
+  IniWrite intermediateDelay, cfgFile, "config", "intermediateDelay"
   
 }
 ;---------------------------------- openDir ----------------------------------
@@ -126,9 +126,11 @@ toggleTestmode(*){
   IniWrite testmode, configFile, "config", "testmode"
   if (testmode){
     settingsMenu.Check("Testmode")
+    testMenu.Check("Testmode")
     mainGuiText1Append("Please select a menu entry! (`"testmode`" is activated)")
   } else {
     settingsMenu.UnCheck("Testmode")
+    testMenu.UnCheck("Testmode")
     mainGuiText1Append("Please select a menu entry! (`"testmode`" is deactivated)")
   }
 }

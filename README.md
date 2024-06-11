@@ -1,7 +1,7 @@
 <a name="chunkCopy">&nbsp;</a>  
 # chunkCopy  
-Helper to copy large backupfiles in chunks to the cloud.  
-(Autohotkey scripts)  
+Helper to copy (called "upload" also) large files (backup etc.) in chunks to the cloud or to an USB stick.  
+(Made with Autohotkey 2)  
 All *.exe are 64 bit.  
   
 All files are licensed under the **GNU GENERAL PUBLIC LICENSE**  
@@ -24,22 +24,16 @@ A copy is included of the file "license.txt" is included in each download.
   
 Version (&gt;=)| Change  
 ------------ | -------------  
+0.018 | uploadDelay rename to intermediateDelay (USB stick cool down time)  
 0.017 | Move to a project of its own! [chunkCopy](https://github.com/jvr-ks/chunkCopy). 
   
 #### <a name="chunkCopydescription">chunkCopy description</a><a href="#overview"> &uarr;</a>  
-The speed of my internet connection is a little slow.  
-To send the backup files (made with "Macrium Reflect") to the cloud storage.  
-I use a feature of my router ("Fritzbox 7490").  
-The router makes a Webdav connection and transfers the backup files from its cache to the cloud storage then.  
-I made the "chunkCopy" app to copy the backup files (500 MB \*1) each) via "Robocopy" to the router cache (USB SSD) 
-in chunks of "filesPerPass" files, the router will upload them to the cloud then.  
-Pressing the ESCAPE key while "chunkCopy" has the focus aborts the app,  
-but the upload to the cache is continued until the current file upload has finished.  
-Unfortunately the upload from the cache to the cloud cannot be controlled in any way,  
-beside turning off the router ...  
-chunkCopy can be used by a scheduler via the command line.  
+Copy all files inside the source directory to a destination directory using Windows "robocopy" command.  
   
-\*1) The "Webdav" implementation is not stable for filesizes greater 0.5 GB
+Pressing the ESCAPE key while "chunkCopy" has the focus aborts the app,  
+but the copy operation to the cache is continued until the current file copy operation has finished.  
+  
+chunkCopy can be used by a scheduler via the command line.  
   
 ##### <a name="configuration">Configuration</a><a href="#overview"> &uarr;</a>  
 Select Menu » "Settings" to edit the Configuration.  
@@ -54,14 +48,13 @@ testmodeFrom=.\testmodeFrom
 testmodeTo=.\testmodeTo
 fontname=Segoe UI
 fontsize=10
-uploadDelay=60000
+intermediateDelay=60000
 ... more internally used parameters
 ```
 "from=" is the source directory,  
 "to= is the destination directory,  
-"roboParam=" should no be changed,  
-"filesPerPass=" holds the number of files that should be uploaded at once to the router (router cache),  
-the value depends on the filesize, the LAN/WLAN speed and the disk storage attached to the router.  
+"roboParam=" should no be changed (besides setting a filename filter etc.),  
+"filesPerPass=" holds the number of files that should be copied at once.  
   
 The size of “filesPerPass” can be set via the radio buttons or as a value in the Configuration file.  
 (Changes of “filesPerPass” in the Configuration file are reflected after a restart only).     
@@ -212,5 +205,5 @@ Virustotal virusscan results, please use [CTRL] + Click to open in a new window!
 
 
 ##### Virusscan at Virustotal 
-[Virusscan at Virustotal, chunkCopy.exe 64bit-exe, Check here](https://www.virustotal.com/gui/url/2905ae18866b7f67d6c765ed575cc21d38817982f49a1f69212b12dbaef31a1e/detection/u-2905ae18866b7f67d6c765ed575cc21d38817982f49a1f69212b12dbaef31a1e-1717780676
+[Virusscan at Virustotal, chunkCopy.exe 64bit-exe, Check here](https://www.virustotal.com/gui/url/2905ae18866b7f67d6c765ed575cc21d38817982f49a1f69212b12dbaef31a1e/detection/u-2905ae18866b7f67d6c765ed575cc21d38817982f49a1f69212b12dbaef31a1e-1718098189
 )  

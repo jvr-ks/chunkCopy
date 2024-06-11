@@ -14,7 +14,7 @@ readConfig() {
   testmodeTo := IniRead(configFile, "config", "testmodeTo" , ".\testmodeTo")
   fontname := IniRead(configFile, "config", "fontname" , "Segoe UI")
   fontsize := IniRead(configFile, "config", "fontsize" , 11)
-  uploadDelay := IniRead(configFile, "config", "uploadDelay" , 60000)
+  intermediateDelay := IniRead(configFile, "config", "intermediateDelay" , 60000)
 
   testmode := IniRead(configFile, "config", "testmode" , 0)
   finishedActionMode := IniRead(configFile, "config", "finishedActionMode" , 1)

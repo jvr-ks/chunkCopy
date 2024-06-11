@@ -16,10 +16,10 @@ compareFiles(){
   sourcePath := ""
   if(testmode){
     sourcePathFrom := testmodeFrom
-    sourcePathTo := testmodeTo
+    destinationPathTo := testmodeTo
   } else {
     sourcePathFrom := from
-    sourcePathTo := to
+    destinationPathTo := to
   }
   fileListInitial := []
   Loop Files, sourcePathFrom "\*.*" {
@@ -37,8 +37,8 @@ compareFiles(){
   
   Loop cmpLen {
     mainGuiText1Append("Comparing: " fileListInitial[A_Index] " (Number " A_Index " of " cmpLen " files to compare)")
-    if (FileExist(sourcePathTo "\" fileListInitial[A_Index])){
-      exitCode := RunWait("fc " sourcePathFrom "\" fileListInitial[A_Index] " " sourcePathTo "\" fileListInitial[A_Index])
+    if (FileExist(destinationPathTo "\" fileListInitial[A_Index])){
+      exitCode := RunWait("fc " sourcePathFrom "\" fileListInitial[A_Index] " " destinationPathTo "\" fileListInitial[A_Index])
       if (exitCode){
         mainGuiText1Append("Not identical: " fileListInitial[A_Index])
         nonFound := 0

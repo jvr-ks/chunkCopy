@@ -4,7 +4,7 @@
 ;-------------------------------- uploadStart --------------------------------
 uploadStart(*){
   global
-  local logFile, sourcePathFrom, sourcePathTo
+  local logFile, sourcePathFrom, destinationPathTo
   local fileListString, fileListStringSorted, fileListInitial, fileList, msg, timestamp
   
   inhibitIfoperationRunning()
@@ -32,11 +32,11 @@ uploadStart(*){
   logFile := ""
   if(testmode){
     sourcePathFrom := testmodeFrom
-    sourcePathTo := testmodeTo
+    destinationPathTo := testmodeTo
     logFile := "chunkCopyLogTest.txt"
   } else {
     sourcePathFrom := from
-    sourcePathTo := to
+    destinationPathTo := to
     logFile := "chunkCopyLog.txt"
   }
   
@@ -65,8 +65,8 @@ uploadStart(*){
   
   fileList := []
   Loop fileListInitial.Length {
-    mainGuiText1Append("Check: " sourcePathTo "\" fileListInitial[A_Index])
-    if (FileExist(sourcePathTo "\" fileListInitial[A_Index])){
+    mainGuiText1Append("Check: " destinationPathTo "\" fileListInitial[A_Index])
+    if (FileExist(destinationPathTo "\" fileListInitial[A_Index])){
     } else {
       fileList.push(fileListInitial[A_Index])
       mainGuiText1Append("Found file to be uploaded: " fileListInitial[A_Index] " (" fileList.Length ")")
@@ -80,7 +80,7 @@ uploadStart(*){
   
   fileCounter := 0
   
-  mainGuiText1Append("From: " quot sourcePathFrom quot " sourcePathTo: " quot sourcePathTo quot)
+  mainGuiText1Append("From: " quot sourcePathFrom quot " destinationPathTo: " quot destinationPathTo quot)
   
   if (fileList.Length > 0){
     FileAppend "`n", logFile, "`n"
@@ -95,7 +95,7 @@ uploadStart(*){
       mainGuiText1Append("Gestarted: " timestamp)
       FileAppend "Gestarted: " timestamp "`n", logFile, "`n"
       
-      cmd := "robocopy " quot sourcePathFrom quot " " quot sourcePathTo quot " File " currentFile " " roboParam
+      cmd := "robocopy " quot sourcePathFrom quot " " quot destinationPathTo quot " File " currentFile " " roboParam
       
       FileAppend cmd "`n", logFile, "`n"
 
@@ -144,8 +144,8 @@ uploadStart(*){
       }
       
       if(!testmode){
-        mainGuiText1Append("Pause between uploads: (uploadDelay=" uploadDelay " msec) ...")
-        sleep uploadDelay
+        mainGuiText1Append("Pause between uploads: (intermediateDelay=" intermediateDelay " msec) ...")
+        sleep intermediateDelay
       } else {
         mainGuiText1Append("Testmode: 5 seconds pause between uploads!")
         sleep 5000
